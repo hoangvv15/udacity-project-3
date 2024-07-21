@@ -6,8 +6,8 @@ services:
       - 8080:8080
     restart: always
     depends_on:
-      - backend-user
-      - backend-feed
+      - api-user
+      - api-feed
   backend-user:
     image: udagram-api-user:v4a
     environment:
