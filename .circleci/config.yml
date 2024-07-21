@@ -3,7 +3,7 @@ version: 2.1
 executors:
   node-executor:
     docker:
-      - image: circleci/node:16-buster
+      - image: circleci/node:16-buster  # Ensure Docker is included in the base image
 
 jobs:
   build-and-push:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
 
-      # Install Docker
+      # Install Docker (if necessary)
       - run:
           name: Install Docker
           command: |
@@ -22,10 +22,20 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
+      # Verify Docker installation and version
+      - run:
+          name: Check Docker version
+          command: docker --version
+
+      # Verify Docker Compose installation and version
+      - run:
+          name: Check Docker Compose version
+          command: docker-compose --version
+
       # Build Docker images
       - run:
           name: Build Docker images
-          command: docker-compose -f ./docker-compose-build.yaml build --parallel  # Adjusted path to docker-compose-build.yaml
+          command: docker-compose -f ./docker-compose-build.yaml build --parallel
 
       # Tag Docker images
       - run:
