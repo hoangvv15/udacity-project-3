@@ -1,0 +1,53 @@
+version: 2.1
+
+executors:
+  node-executor:
+    docker:
+      - image: circleci/node:16
+
+jobs:
+  build-and-push:
+    executor: node-executor
+    steps:
+      - checkout
+
+      # Setup Docker
+      - run:
+          name: Install Docker
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+      # Build Docker images
+      - run:
+          name: Build Docker images
+          command: docker-compose -f docker-compose-build.yaml build --parallel
+
+      # Tag Docker images
+      - run:
+          name: Tag Docker images
+          command: |
+            docker tag $UDAGRAM_API_FEED_IMAGE_NAME $DOCKER_USERNAME/$UDAGRAM_API_FEED_IMAGE_NAME:$TAG
+            docker tag $UDAGRAM_API_USER_IMAGE_NAME $DOCKER_USERNAME/$UDAGRAM_API_USER_IMAGE_NAME:$TAG
+            docker tag $UDAGRAM_FRONTEND_IMAGE_NAME $DOCKER_USERNAME/$UDAGRAM_FRONTEND_IMAGE_NAME:$TAG
+            docker tag $UDAGRAM_REVERSEPROXY_IMAGE_NAME $DOCKER_USERNAME/$UDAGRAM_REVERSEPROXY_IMAGE_NAME:$TAG
+
+      # Docker login and push
+      - run:
+          name: Docker login and push
+          command: |
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+            docker push $DOCKER_USERNAME/$UDAGRAM_API_FEED_IMAGE_NAME:$TAG
+            docker push $DOCKER_USERNAME/$UDAGRAM_API_USER_IMAGE_NAME:$TAG
+            docker push $DOCKER_USERNAME/$UDAGRAM_FRONTEND_IMAGE_NAME:$TAG
+            docker push $DOCKER_USERNAME/$UDAGRAM_REVERSEPROXY_IMAGE_NAME:$TAG
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build-and-push:
+          filters:
+            branches:
+              only:
+                - master
