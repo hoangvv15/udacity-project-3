@@ -25,7 +25,7 @@ jobs:
       # Build Docker images
       - run:
           name: Build Docker images
-          command: docker-compose -f udacity-project-3/docker-compose-build.yaml build --parallel
+          command: docker-compose -f ./docker-compose-build.yaml build --parallel  # Adjusted path to docker-compose-build.yaml
 
       # Tag Docker images
       - run:
