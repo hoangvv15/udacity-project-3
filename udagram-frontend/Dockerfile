@@ -1,5 +1,5 @@
 ### Build
-FROM beevelop/ionic:latest AS ionic
+FROM beevelop/ionic:v2021.06.1 AS ionic
 ENV NODE_OPTIONS=--openssl-legacy-provider
 ## Create app directory
 WORKDIR /usr/src/app
