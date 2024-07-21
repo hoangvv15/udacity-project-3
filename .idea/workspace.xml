@@ -5,54 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a48f8d2-31e4-4105-a47c-bcc376d20ca0" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/mock/xander0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/mock/xander1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/mock/xander2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/aws.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/config/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/controllers/v0/feed/models/FeedItem.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/controllers/v0/feed/routes/feed.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/controllers/v0/index.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/controllers/v0/model.index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/migrations/20190325-create-feed-item.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/migrations/20190328-create-user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/sequelize.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/src/server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-feed/tslint.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/.dockerignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/mock/xander0.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/mock/xander1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/mock/xander2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/aws.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/config/config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/controllers/v0/index.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/controllers/v0/model.index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/controllers/v0/users/models/User.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/controllers/v0/users/routes/auth.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/controllers/v0/users/routes/user.router.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/migrations/20190325-create-feed-item.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/migrations/20190328-create-user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/sequelize.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/src/server.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-api-user/tslint.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-reverseproxy/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/udagram-reverseproxy/nginx.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose-build.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/udagram-frontend/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/udagram-frontend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-feed/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/udagram-api-feed/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-feed/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/udagram-api-feed/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-feed/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/udagram-api-feed/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-feed/src/migrations/20190328-create-user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-feed/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/udagram-api-feed/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-user/.dockerignore" beforeDir="false" afterPath="$PROJECT_DIR$/udagram-api-user/.dockerignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-user/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/udagram-api-user/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-user/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/udagram-api-user/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-user/src/migrations/20190325-create-feed-item.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-api-user/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/udagram-api-user/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/udagram-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/udagram-frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/vuvanhoang/Documents/udacity-project-3",
+    "last_opened_file_path": "/Users/vuvanhoang/Documents/udacity-project-3/udagram-frontend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -103,24 +70,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/udagram-frontend" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/udagram-api-user" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="udacity-project-3" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="udacity-project-3" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -144,7 +97,10 @@
       <workItem from="1720016867103" duration="66000" />
       <workItem from="1720017020139" duration="1374000" />
       <workItem from="1720019901788" duration="5315000" />
-      <workItem from="1721008029875" duration="2479000" />
+      <workItem from="1721008029875" duration="3024000" />
+      <workItem from="1721542359256" duration="2151000" />
+      <workItem from="1721544526753" duration="43000" />
+      <workItem from="1721544640877" duration="6456000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
@@ -170,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720024921156</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="commit">
+      <option name="closed" value="true" />
+      <created>1721462923300</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721462923300</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
