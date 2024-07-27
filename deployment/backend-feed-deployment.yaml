@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend-feed
-          image: docker.io/hoangvv15/udagram-api-feed:v6
+          image: docker.io/hoangvv15/udagram-api-feed:v7
           env:
             - name: POSTGRES_USERNAME
               valueFrom:
@@ -63,6 +63,12 @@ spec:
                   key: URL
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "500m"
+
 
 ---
 apiVersion: v1

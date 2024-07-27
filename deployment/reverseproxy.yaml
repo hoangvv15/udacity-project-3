@@ -14,27 +14,26 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: docker.io/hoangvv15/reverseproxy:v6
+          image: docker.io/hoangvv15/reverseproxy:v7
           ports:
             - containerPort: 80
-          volumeMounts:
-            - name: nginx-config
-              mountPath: /etc/nginx/nginx.conf
-              subPath: nginx.conf
-      volumes:
-        - name: nginx-config
-          configMap:
-            name: env-config
+          resources:
+            requests:
+              cpu: "100m"
+            limits:
+              cpu: "500m"
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    service: reverseproxy
   name: reverseproxy
 spec:
-  selector:
-    app: reverseproxy
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
+  selector:
+    service: reverseproxy
