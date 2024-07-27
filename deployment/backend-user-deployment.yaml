@@ -3,22 +3,43 @@ kind: Deployment
 metadata:
   name: backend-user
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      run: backend-user
-  replicas: 2
+      app: backend-user
   template:
     metadata:
       labels:
-        run: backend-user
+        app: backend-user
     spec:
       containers:
         - name: backend-user
           image: docker.io/hoangvv15/udagram-api-user:latest
+          env:
+            - name: POSTGRES_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: env-secret
+                  key: POSTGRES_USERNAME
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: env-secret
+                  key: POSTGRES_PASSWORD
           ports:
             - containerPort: 80
-          resources:
-            limits:
-              cpu: 500m
-            requests:
-              cpu: 200m
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: backend-user
+  name: backend-user
+spec:
+  ports:
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
+  selector:
+    service: backend-user

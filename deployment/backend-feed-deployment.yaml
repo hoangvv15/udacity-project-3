@@ -3,22 +3,43 @@ kind: Deployment
 metadata:
   name: backend-feed
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      run: backend-feed
-  replicas: 2
+      app: backend-feed
   template:
     metadata:
       labels:
-        run: backend-feed
+        app: backend-feed
     spec:
       containers:
         - name: backend-feed
           image: docker.io/hoangvv15/udagram-api-feed:latest
+          env:
+            - name: POSTGRES_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: env-secret
+                  key: POSTGRES_USERNAME
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: env-secret
+                  key: POSTGRES_PASSWORD
           ports:
             - containerPort: 80
-          resources:
-            limits:
-              cpu: 500m
-            requests:
-              cpu: 200m
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: backend-feed
+  name: backend-feed
+spec:
+  ports:
+    - name: "8080"
+      port: 8080
+      targetPort: 8080
+  selector:
+    service: backend-feed

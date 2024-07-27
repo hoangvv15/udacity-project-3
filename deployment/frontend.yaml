@@ -13,12 +13,26 @@ spec:
         run: frontend
     spec:
       containers:
-      - name: frontend
-        image: docker.io/hoangvv15/udagram-frontend:latest
-        ports: 
-        - containerPort: 80
-        resources:
-          limits:
-            cpu: 500m
-          requests:
-            cpu: 200m
+        - name: frontend
+          image: docker.io/hoangvv15/udagram-frontend:latest
+          ports:
+            - containerPort: 80
+          resources:
+            limits:
+              cpu: 500m
+            requests:
+              cpu: 200m
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    run: frontend
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+  selector:
+    run: frontend
