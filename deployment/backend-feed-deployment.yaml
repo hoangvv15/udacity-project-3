@@ -28,38 +28,38 @@ spec:
                   key: POSTGRES_PASSWORD
             - name: POSTGRES_HOST
               valueFrom:
-                secretKeyRef:
-                  name: env-secret
+                configMapKeyRef:
+                  name: env-config
                   key: POSTGRES_HOST
             - name: POSTGRES_DB
               valueFrom:
-                secretKeyRef:
-                  name: env-secret
+                configMapKeyRef:
+                  name: env-config
                   key: POSTGRES_DB
             - name: AWS_BUCKET
               valueFrom:
-                secretKeyRef:
-                  name: env-secret
+                configMapKeyRef:
+                  name: env-config
                   key: AWS_BUCKET
             - name: AWS_REGION
               valueFrom:
-                secretKeyRef:
-                  name: env-secret
+                configMapKeyRef:
+                  name: env-config
                   key: AWS_REGION
             - name: AWS_PROFILE
               valueFrom:
-                secretKeyRef:
-                  name: env-secret
+                configMapKeyRef:
+                  name: env-config
                   key: AWS_PROFILE
             - name: JWT_SECRET
               valueFrom:
-                secretKeyRef:
-                  name: env-secret
+                configMapKeyRef:
+                  name: env-config
                   key: JWT_SECRET
             - name: URL
               valueFrom:
-                secretKeyRef:
-                  name: env-secret
+                configMapKeyRef:
+                  name: env-config
                   key: URL
           ports:
             - containerPort: 80

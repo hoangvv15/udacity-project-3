@@ -3,13 +3,13 @@ kind: ConfigMap
 metadata:
   name: env-config
 data:
-  POSTGRES_HOST: "hoangvv.cls8wvpa9wdw.us-east-1.rds.amazonaws.com"
-  POSTGRES_DB: "postgres"
-  AWS_BUCKET: "test-841760530493-dev"
-  AWS_REGION: "us-east-1"
-  AWS_PROFILE: "default"
-  JWT_SECRET: "testing"
-  URL: "http://localhost:8100"
+  POSTGRES_HOST: hoangvv.cls8wvpa9wdw.us-east-1.rds.amazonaws.com
+  POSTGRES_DB: postgres
+  AWS_BUCKET: test-841760530493-dev
+  AWS_REGION: us-east-1
+  AWS_PROFILE: default
+  JWT_SECRET: testing
+  URL: http://localhost:8100
   nginx.conf: |
     worker_processes 1;
     events { worker_connections 1024; }
