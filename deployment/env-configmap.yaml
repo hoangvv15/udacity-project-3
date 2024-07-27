@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
   name: env-config
 data:
-  POSTGRES_USERNAME: "hoangvv15"
-  POSTGRES_PASSWORD: "Meodien1"
   POSTGRES_HOST: "hoangvv.cls8wvpa9wdw.us-east-1.rds.amazonaws.com"
   POSTGRES_DB: "postgres"
   AWS_BUCKET: "test-841760530493-dev"

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: docker.io/hoangvv15/reverseproxy:latest
+          image: docker.io/hoangvv15/reverseproxy:v6
           ports:
             - containerPort: 80
           volumeMounts:
