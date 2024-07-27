@@ -1,11 +1,6 @@
-const decodeBase64 = (value) => {
-  if (!value) return value;
-  return Buffer.from(value, 'base64').toString('utf-8');
-};
-
 export const config = {
-  'username': decodeBase64(process.env.POSTGRES_USERNAME),
-  'password': decodeBase64(process.env.POSTGRES_PASSWORD),
+  'username': process.env.POSTGRES_USERNAME,
+  'password': process.env.POSTGRES_PASSWORD,
   'database': process.env.POSTGRES_DB,
   'host': process.env.POSTGRES_HOST,
   'dialect': 'postgres',
