@@ -1,9 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: reverseproxy
+  name: udagram-reverseproxy
+  labels:
+    app: udagram-reverseproxy
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: reverseproxy
@@ -14,22 +16,38 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: docker.io/hoangvv15/reverseproxy:v7
+          image: docker.io/hoangvv15/reverseproxy:v8
           ports:
             - containerPort: 8080
-          resources:
-            limits:
-              cpu: 1000m
-            requests:
-              cpu: 500m
+          env:
+            - name: AWS_PROFILE
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: AWS_PROFILE
+            - name: JWT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: env-config
+                  key: JWT_SECRET
+          volumeMounts:
+            - name: aws-secret
+              mountPath: "/root/.aws/"
+              readOnly: true
+      restartPolicy: Always
+      volumes:
+        - name: aws-secret
+          secret:
+            secretName: aws-secret
+
 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    service: reverseproxy
   name: reverseproxy
+  labels:
+    app: reverseproxy
 spec:
   ports:
     - name: "8080"
@@ -37,4 +55,5 @@ spec:
       targetPort: 8080
       protocol: TCP
   selector:
-    service: reverseproxy
+    app: reverseproxy
+  type: LoadBalancer
